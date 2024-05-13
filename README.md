@@ -1,5 +1,7 @@
 # helm-charts
 
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/baboulinet)](https://artifacthub.io/packages/search?repo=baboulinet)
+
 ## Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
@@ -20,3 +22,9 @@ To install the <chart-name> chart:
 To uninstall the chart:
 
     helm delete my-<chart-name>
+
+The charts are tested and validated on OpenShift
+
+## Charts available:
+- swagger
+- pgrest
