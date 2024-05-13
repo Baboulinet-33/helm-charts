@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ include "pgrest.fullname" . }}-admin"
+  labels:
+    {{- include "pgrest.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.serviceAdmin.type }}
+  ports:
+    - port: {{ .Values.serviceAdmin.port }}
+      targetPort: admin
+      protocol: TCP
+      name: admin
+  selector:
+    {{- include "pgrest.selectorLabels" . | nindent 4 }}
