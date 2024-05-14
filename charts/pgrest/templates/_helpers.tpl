@@ -48,6 +48,9 @@ Selector labels
 {{- define "pgrest.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "pgrest.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Values.commonLabels }}
+{{ .Values.commonLabels | toYaml }}
+{{- end }}
 {{- end }}
 
 {{/*

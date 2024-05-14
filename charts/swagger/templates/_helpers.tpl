@@ -52,6 +52,9 @@ Selector labels
 {{- define "swagger.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "swagger.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Values.commonLabels }}
+{{ .Values.commonLabels | toYaml }}
+{{- end }}
 {{- end }}
 
 {{/*
