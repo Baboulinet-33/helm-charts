@@ -3,6 +3,16 @@ entries:
   pgrest:
   - apiVersion: v2
     appVersion: v12.0.2
+    created: "2024-05-14T12:07:57.066118432Z"
+    description: Postgrest Helm Chart
+    digest: 29292e85d253a6ce997e6de977cf8acf2814a4d33524691f2c8e1144effa0aec
+    name: pgrest
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/pgrest-0.2.0/pgrest-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v12.0.2
     created: "2024-05-13T14:03:19.611598797Z"
     description: Postgrest Helm Chart
     digest: 43c8595fe848fb85c5efb9b1118b2eac59cc31f3f27be1ce9bdecc09c609e4dc
@@ -14,6 +24,16 @@ entries:
   swagger:
   - apiVersion: v2
     appVersion: v5.11.0
+    created: "2024-05-14T12:07:57.237657623Z"
+    description: Swagger Helm Chart
+    digest: a6665be2dc01db3feccaa0a1cd45b7a425d9d9dbbf1703be3e9eb47316889629
+    name: swagger
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.2.0/swagger-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v5.11.0
     created: "2024-05-13T14:03:19.739826486Z"
     description: Swagger Helm Chart
     digest: f339cc003181946d7394669cc71d8a2fa401279e89da4e15558286d6bf7ed1d1
@@ -22,4 +42,4 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.1.0/swagger-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-13T14:03:19.739868194Z"
+generated: "2024-05-14T12:07:57.237669204Z"
