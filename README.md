@@ -28,3 +28,4 @@ The charts are tested and validated on OpenShift
 ## Charts available:
 - swagger
 - pgrest
+- krakend openshift
