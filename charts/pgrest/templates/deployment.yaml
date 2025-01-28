@@ -36,14 +36,14 @@ spec:
           image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-          {{- if .Values.configFromConfigMap }}
-          - configMapRef:
-              name: {{ .Values.configFromConfigMap }}
-          {{- end }}
-          {{- if .Values.configFromSecret }}
-          - secretRef:
-              name: {{ .Values.configFromSecret }}
-          {{- end }}
+          {{- range $current_cm := .Values.extraConfigMaps }}
+            - configMapRef:
+              name: {{ $current_cm }}
+          {{ end -}}
+          {{- range $current_secret := .Values.extraSecrets }}
+            - secretRef:
+              name: {{ $current_secret }}
+          {{ end -}}
           ports:
             - name: api
               containerPort: {{ .Values.service.port }}

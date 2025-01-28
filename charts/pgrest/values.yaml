@@ -102,5 +102,5 @@ tolerations: []
 affinity: {}
 
 # Env vars from config map and secret
-configFromConfigMap:
-configFromSecret: 
+extraConfigMaps: []
+extraSecrets: []
