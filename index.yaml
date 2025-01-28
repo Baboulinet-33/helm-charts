@@ -16,6 +16,16 @@ entries:
   pgrest:
   - apiVersion: v2
     appVersion: v12.0.2
+    created: "2025-01-28T17:33:24.597633435Z"
+    description: Postgrest Helm Chart
+    digest: 00d644531f53779c27a4378378699c073a0adae9db1ef288e3163cb9fe01aa94
+    name: pgrest
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/pgrest-0.3.0/pgrest-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: v12.0.2
     created: "2024-05-14T12:07:57.066118432Z"
     description: Postgrest Helm Chart
     digest: 29292e85d253a6ce997e6de977cf8acf2814a4d33524691f2c8e1144effa0aec
@@ -55,4 +65,4 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.1.0/swagger-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-05T15:00:34.297733014Z"
+generated: "2025-01-28T17:33:24.59764661Z"
