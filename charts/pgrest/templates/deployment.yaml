@@ -37,13 +37,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
           {{- range $current_cm := .Values.extraConfigMaps }}
-            - configMapRef:
+          - configMapRef:
               name: {{ $current_cm }}
           {{ end -}}
           {{- range $current_secret := .Values.extraSecrets }}
-            - secretRef:
+          - secretRef:
               name: {{ $current_secret }}
-          {{ end -}}
+          {{ end }}
           ports:
             - name: api
               containerPort: {{ .Values.service.port }}
