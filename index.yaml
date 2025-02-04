@@ -3,6 +3,16 @@ entries:
   ferretdb:
   - apiVersion: v2
     appVersion: "2"
+    created: "2025-02-04T15:08:23.005471685Z"
+    description: A Helm chart for Kubernetes
+    digest: 97cb63ffffe1b11e03892f404f95bcc3441fc2c5422687afb5c41bddc8be5d16
+    name: ferretdb
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/ferretdb-0.1.6/ferretdb-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: "2"
     created: "2025-02-04T13:20:17.345587572Z"
     description: A Helm chart for Kubernetes
     digest: 9645dd5ede9735bf94e71667512f341accfc5b4a08e6d46e726e1585a073b3d1
@@ -116,4 +126,4 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.1.0/swagger-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-04T13:20:17.34562874Z"
+generated: "2025-02-04T15:08:23.005517611Z"
