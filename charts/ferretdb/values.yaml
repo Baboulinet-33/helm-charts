@@ -107,4 +107,6 @@ tolerations: []
 affinity: {}
 
 env:
+  FERRETDB_TELEMETRY: disable
+  DO_NOT_TRACK: true
   FERRETDB_POSTGRESQL_URL: "" # mandatory
