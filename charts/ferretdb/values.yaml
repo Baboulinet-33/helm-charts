@@ -74,11 +74,11 @@ resources:
 livenessProbe:
   httpGet:
     path: /debug/livez
-    port: http
+    port: debug
 readinessProbe:
   httpGet:
     path: /debug/readyz
-    port: http
+    port: debug
 
 autoscaling:
   enabled: false
