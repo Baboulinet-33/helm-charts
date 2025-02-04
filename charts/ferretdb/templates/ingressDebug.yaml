@@ -1,5 +1,5 @@
 {{- if .Values.ingressDebug.enabled -}}
-{{- $fullName := include "debug" . -}}
+{{- $fullName := "debug" -}}
 {{- $svcPort := "8088" -}}
 {{- if and .Values.ingressDebug.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingressDebug.annotations "kubernetes.io/ingress.class") }}
