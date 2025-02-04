@@ -73,11 +73,11 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /debug/livez
     port: http
 readinessProbe:
   httpGet:
-    path: /
+    path: /debug/readyz
     port: http
 
 autoscaling:
