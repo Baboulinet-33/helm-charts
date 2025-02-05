@@ -43,10 +43,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: {{ .Values.service.portHttp }}
               protocol: TCP
             - name: debug
-              containerPort: 8088
+              containerPort: {{ .Values.service.portDebug }}
               protocol: TCP
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}

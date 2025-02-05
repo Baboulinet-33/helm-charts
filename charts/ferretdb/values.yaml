@@ -39,7 +39,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 27017
+  portHttp: 27017
+  portDebug: 8088
 
 ingress:
   enabled: false
@@ -58,7 +59,6 @@ ingressDebug:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-
 
 resources:
   limits:

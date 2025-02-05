@@ -7,9 +7,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.service.portHttp }}
       targetPort: http
       protocol: TCP
       name: http
+    - port: {{ .Values.service.portDebug }}
+      targetPort: debug
+      protocol: TCP
+      name: debug
   selector:
     {{- include "ferretdb.selectorLabels" . | nindent 4 }}
