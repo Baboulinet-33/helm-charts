@@ -107,6 +107,16 @@ entries:
     version: 0.1.0
   swagger:
   - apiVersion: v2
+    appVersion: v5.20.0
+    created: "2025-03-07T08:10:42.312224432Z"
+    description: Swagger Helm Chart
+    digest: 68f01bc030cf5052ed02cfae2d6365d2c2ba59e8955c30cf37633f57f52c5649
+    name: swagger
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.3.0/swagger-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: v5.11.0
     created: "2024-05-14T12:07:57.237657623Z"
     description: Swagger Helm Chart
@@ -126,4 +136,4 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.1.0/swagger-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-04T15:08:23.005517611Z"
+generated: "2025-03-07T08:10:42.312253667Z"
