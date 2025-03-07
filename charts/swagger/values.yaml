@@ -96,6 +96,10 @@ ports:
   protocol: TCP
 
 # Config for swagger to display api
-config: []
+urls: []
   # - url:
   #   name:
+
+# Env vars from config map and secret
+extraConfigMaps: []
+extraSecrets: []

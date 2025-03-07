@@ -36,6 +36,14 @@ spec:
           envFrom:
           - configMapRef:
               name: {{ include "swagger.fullname" . }}
+          {{- range $current_cm := .Values.extraConfigMaps }}
+          - configMapRef:
+              name: {{ $current_cm }}
+          {{ end -}}
+          {{- range $current_secret := .Values.extraSecrets }}
+          - secretRef:
+              name: {{ $current_secret }}
+          {{ end }}
           ports:
             {{ toYaml .Values.ports | nindent 12}}
           livenessProbe:

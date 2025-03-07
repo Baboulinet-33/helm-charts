@@ -5,4 +5,4 @@ metadata:
   labels:
     {{- include "swagger.labels" . | nindent 4 }}
 data:
-  URLS: {{ toJson .Values.config | quote }}
+  URLS: {{ toJson .Values.urls | quote }}
