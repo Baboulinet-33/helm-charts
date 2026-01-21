@@ -1,0 +1,386 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "replicaCount": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "image": {
+        "type": "object",
+        "properties": {
+          "registry": {
+            "type": "string",
+            "default": "docker.io"
+          },
+          "repository": {
+            "type": "string",
+            "default": "postgrest/postgrest"
+          },
+          "pullPolicy": {
+            "type": "string",
+            "enum": ["Always", "IfNotPresent", "Never"],
+            "default": "IfNotPresent"
+          },
+          "tag": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": ["registry", "repository", "pullPolicy"]
+      },
+      "imagePullSecrets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "default": []
+      },
+      "nameOverride": {
+        "type": "string",
+        "default": ""
+      },
+      "fullnameOverride": {
+        "type": "string",
+        "default": ""
+      },
+      "commonLabels": {
+        "type": "object",
+        "default": {}
+      },
+      "serviceAccount": {
+        "type": "object",
+        "properties": {
+          "create": {
+            "type": "boolean",
+            "default": true
+          },
+          "annotations": {
+            "type": "object",
+            "default": {}
+          },
+          "name": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": ["create"]
+      },
+      "podAnnotations": {
+        "type": "object",
+        "default": {}
+      },
+      "podSecurityContext": {
+        "type": "object",
+        "default": {}
+      },
+      "securityContext": {
+        "type": "object",
+        "default": {}
+      },
+      "service": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["ClusterIP", "NodePort", "LoadBalancer", "ExternalName"],
+            "default": "ClusterIP"
+          },
+          "port": {
+            "type": "integer",
+            "default": 3000
+          }
+        },
+        "required": ["type", "port"]
+      },
+      "serviceAdmin": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          },
+          "type": {
+            "type": "string",
+            "enum": ["ClusterIP", "NodePort", "LoadBalancer", "ExternalName"],
+            "default": "ClusterIP"
+          },
+          "port": {
+            "type": "integer",
+            "default": 3001
+          }
+        },
+        "required": ["enabled", "type", "port"]
+      },
+      "ingress": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "className": {
+            "type": "string",
+            "default": ""
+          },
+          "annotations": {
+            "type": "object",
+            "default": {}
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "host": {
+                  "type": "string"
+                },
+                "paths": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "pathType": {
+                        "type": "string",
+                        "enum": ["ImplementationSpecific", "Exact", "Prefix"]
+                      }
+                    },
+                    "required": ["path", "pathType"]
+                  }
+                }
+              },
+              "required": ["host", "paths"]
+            }
+          },
+          "tls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "secretName": {
+                  "type": "string"
+                },
+                "hosts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "default": []
+          }
+        },
+        "default": {
+          "enabled": false,
+          "className": "",
+          "annotations": {},
+          "hosts": [
+            {
+              "host": "chart-example.local",
+              "paths": [
+                {
+                  "path": "/",
+                  "pathType": "ImplementationSpecific"
+                }
+              ]
+            }
+          ],
+          "tls": []
+        }
+      },
+      "ingressAdmin": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "className": {
+            "type": "string",
+            "default": ""
+          },
+          "annotations": {
+            "type": "object",
+            "default": {}
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "host": {
+                  "type": "string"
+                },
+                "paths": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "pathType": {
+                        "type": "string",
+                        "enum": ["ImplementationSpecific", "Exact", "Prefix"]
+                      }
+                    },
+                    "required": ["path", "pathType"]
+                  }
+                }
+              },
+              "required": ["host", "paths"]
+            }
+          },
+          "tls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "secretName": {
+                  "type": "string"
+                },
+                "hosts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "default": []
+          }
+        },
+        "default": {
+          "enabled": false,
+          "className": "",
+          "annotations": {},
+          "hosts": [
+            {
+              "host": "chart-example-admin.local",
+              "paths": [
+                {
+                  "path": "/",
+                  "pathType": "ImplementationSpecific"
+                }
+              ]
+            }
+          ],
+          "tls": []
+        }
+      },
+      "resources": {
+        "type": "object",
+        "properties": {
+          "limits": {
+            "type": "object",
+            "properties": {
+              "cpu": {
+                "type": "string",
+                "default": "100m"
+              },
+              "memory": {
+                "type": "string",
+                "default": "128Mi"
+              }
+            },
+            "required": ["cpu", "memory"]
+          },
+          "requests": {
+            "type": "object",
+            "properties": {
+              "cpu": {
+                "type": "string",
+                "default": "100m"
+              },
+              "memory": {
+                "type": "string",
+                "default": "128Mi"
+              }
+            },
+            "required": ["cpu", "memory"]
+          }
+        },
+        "default": {
+          "limits": {
+            "cpu": "100m",
+            "memory": "128Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "128Mi"
+          }
+        }
+      },
+      "autoscaling": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "minReplicas": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          },
+          "maxReplicas": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 100
+          },
+          "targetCPUUtilizationPercentage": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 80
+          }
+        },
+        "default": {
+          "enabled": false,
+          "minReplicas": 1,
+          "maxReplicas": 100,
+          "targetCPUUtilizationPercentage": 80
+        }
+      },
+      "nodeSelector": {
+        "type": "object",
+        "default": {}
+      },
+      "tolerations": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "default": []
+      },
+      "affinity": {
+        "type": "object",
+        "default": {}
+      },
+      "extraConfigMaps": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      },
+      "extraSecrets": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      }
+    },
+    "additionalProperties": false
+  }
+  

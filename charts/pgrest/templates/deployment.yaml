@@ -44,6 +44,13 @@ spec:
           - secretRef:
               name: {{ $current_secret }}
           {{ end }}
+          env:
+          - name: PGRST_SERVER_PORT
+            value: {{ .Values.service.port }}
+          {{- if .Values.serviceAdmin.enabled }}
+          - name: PGRST_ADMIN_SERVER_PORT
+            value: {{ .Values.serviceAdmin.port }}
+          {{- end }}
           ports:
             - name: api
               containerPort: {{ .Values.service.port }}
