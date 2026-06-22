@@ -105,6 +105,17 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/pgrest-0.1.0/pgrest-0.1.0.tgz
     version: 0.1.0
+  ragflow:
+  - apiVersion: v2
+    appVersion: dev
+    created: "2026-06-22T13:39:23.785952881Z"
+    description: A Helm chart for deploying RAGFlow on Kubernetes
+    digest: 38047937b89a6512ce19e2c9d8666b359410ec4863cea0ccfadea887c95c6919
+    name: ragflow
+    type: application
+    urls:
+    - https://github.com/Baboulinet-33/helm-charts/releases/download/ragflow-0.1.1/ragflow-0.1.1.tgz
+    version: 0.1.1
   swagger:
   - apiVersion: v2
     appVersion: v5.20.0
@@ -136,4 +147,4 @@ entries:
     urls:
     - https://github.com/Baboulinet-33/helm-charts/releases/download/swagger-0.1.0/swagger-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-07T08:10:42.312253667Z"
+generated: "2026-06-22T13:39:23.785983219Z"
